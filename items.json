@@ -1,49 +1,9 @@
 {
   "items": [
     {
-      "name": "dbggrtwgrw",
-      "amount": 7,
-      "id": 5
-    },
-    {
-      "name": "t4zh46z",
-      "amount": 1000,
-      "id": 6
-    },
-    {
-      "name": "kajfnvjke",
-      "amount": 15,
-      "id": 7
-    },
-    {
-      "name": "gwrt",
-      "amount": 10,
-      "id": 8
-    },
-    {
-      "name": "wgwt",
-      "amount": 10,
-      "id": 9
-    },
-    {
-      "name": "tg45w",
-      "amount": 10,
-      "id": 10
-    },
-    {
-      "name": "Manjeet",
-      "amount": 100000,
-      "id": 11
-    },
-    {
-      "name": "gewt",
+      "name": "Test",
       "amount": 100,
-      "id": 12
-    },
-    {
-      "name": "zuzu",
-      "amount": 10,
-      "id": 13
+      "id": 1
     }
   ]
 }
