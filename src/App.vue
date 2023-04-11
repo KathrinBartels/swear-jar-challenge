@@ -4,18 +4,12 @@
       <RouterLink to="/login" class="login">Login</RouterLink>
     </span>
     <span v-else>
-      <a href="/dashboard" @click="logout">Logout</a>
+      <a href="/" @click="logout">Logout</a>
     </span>
   </div>
   <header>
     <notifications />
     <img alt="Logo" class="logo" src="@/assets/images/logo.svg" width="80" height="90" />
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Swear jar</RouterLink>
-        <RouterLink to="/dashboard">Dashboard</RouterLink>
-      </nav>
-    </div>
   </header>
   <RouterView />
 </template>

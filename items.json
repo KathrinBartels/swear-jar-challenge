@@ -1,9 +1,19 @@
 {
   "items": [
     {
-      "name": "Test",
-      "amount": 100,
-      "id": 1
+      "name": "gberg",
+      "amount": 3,
+      "id": 3
+    },
+    {
+      "name": "trwtgewr",
+      "amount": 3,
+      "id": 4
+    },
+    {
+      "name": "gwrt",
+      "amount": 3,
+      "id": 5
     }
   ]
 }

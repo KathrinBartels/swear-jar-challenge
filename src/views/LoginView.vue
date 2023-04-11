@@ -1,10 +1,19 @@
 <template>
   <main>
-    <form @submit.prevent="login">
-      <input type="text" v-model="username" placeholder="Name" required />
-      <input type="text" v-model="password" placeholder="Password" required />
-      <button :disabled="btnDisabled" class="btn primary" type="submit">Login</button>
-    </form>
+    <section>
+      <h1>Admin Login</h1>
+      <p>Enter your name and password.</p>
+    </section>
+    <section>
+      <form @submit.prevent="login">
+        <input type="text" v-model="username" placeholder="Name" required />
+        <input type="text" v-model="password" placeholder="Password" required />
+        <button :disabled="btnDisabled" class="btn primary" type="submit">Login</button>
+      </form>
+    </section>
+    <section>
+      <p>Back to <RouterLink to="/">home</RouterLink></p>
+    </section>
   </main>
 </template>
 
@@ -48,12 +57,15 @@ export default {
       this.password = ''
       this.user = userStore.user
 
-      // show notification and redirect to dashboard after notification is closed
+      // show notification and redirect to home after notification is closed
       notify({
         type: 'success',
         title: 'Welcome!',
         text: 'You are now logged in!'
       })
+
+      // redirect to home
+      location.href = '/'
     }
   }
 }
