@@ -72,7 +72,6 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { notify } from '@kyvg/vue3-notification'
 import axios from 'axios'
 
-
 // add icons to library
 library.add(faSortUp, faSortDown)
 

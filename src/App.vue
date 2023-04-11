@@ -31,7 +31,6 @@ const logout = () => {
   useUserStore().logout()
   user = null
 }
-
 </script>
 
 <style lang="scss">
