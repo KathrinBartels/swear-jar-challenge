@@ -68,7 +68,6 @@
 import { useUserStore } from '@/stores/userStore'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { notify } from '@kyvg/vue3-notification'
 import axios from 'axios'
 
