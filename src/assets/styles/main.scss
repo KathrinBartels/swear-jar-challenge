@@ -1,0 +1,90 @@
+@import './base.scss';
+
+#app {
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+@media screen and (min-width: 600px) {
+  #app {
+    max-width: 600px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+a {
+  transition: color 0.5s;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+main {
+  margin: 2rem;
+  text-align: center;
+}
+
+form * {
+  margin: 5px;
+  width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+  form * {
+    margin: 5px;
+    width: 50%;
+  }
+}
+
+input {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+}
+
+.btn {
+  padding: 0.5rem 0.5rem;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  text-align: center;
+  &.primary {
+    background-color: var(--primary-light);
+    color: var(--white);
+    &:hover {
+      background-color: var(--primary);
+      border-color: var(--secondary);
+    }
+  }
+
+  &.delete {
+    background-color: var(--error-light);
+    color: var(--white);
+    &:hover {
+      background-color: var(--error);
+      border-color: var(--error);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    background-color: var(--border-color);
+    cursor: not-allowed;
+    color: var(--text-color);
+    &:hover {
+      opacity: 0.5;
+      background-color: var(--border-color);
+      cursor: not-allowed;
+      color: var(--text-color);
+    }
+  }
+}

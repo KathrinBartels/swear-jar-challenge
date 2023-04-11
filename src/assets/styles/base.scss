@@ -1,0 +1,37 @@
+:root {
+  --primary: #208d9e;
+  --primary-light: #2bbcd2;
+  --secondary: #e69804;
+  --secondary-light: #fbb023;
+  --border-color: #c2c2c2;
+  --text-color: #5f5f5f;
+  --white: #ffffff;
+  --black: #000000;
+  --error: #ff0000;
+  --error-light: #ff4d4d;
+}
+
+*,
+*::before,
+*::after {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+  transition: color 0.5s, background-color 0.5s;
+  background: var(--primary-light);
+  background-image: url(../images/pig-grabbing-money.svg);
+  background-size: 100%;
+  font: 16px/1.6 'Karla', 'Helvetica Neue', sans-serif;
+  color: var(--text-color);
+}
