@@ -1,6 +1,11 @@
-# Swear Jar
+<p align="center">
+  <img src="https://github.com/KathrinBartels/swear-jar-challenge/blob/main/src/assets/images/logo.svg" width="80" />
+</p>
 
-## A Vue 3 project for saving entries in a file and show the results and update them as admin
+<h3 align="center"> A little Piggy Bank</h3>
+<p align="center">
+  Add, update and delete items, sort items by name and amount
+</p>
 
 ## Use the following commands to run the project
 
@@ -23,6 +28,10 @@ npm run dev
 
 http://127.0.0.1:5173/
 
-### Login data
+### Login data for testing
 
 admin/admin
+
+<p align="center">
+  Stack: Vue.js 3, Vite, Pinia, TypeScript, Sass, Axios, @kyvg/vue3-notification
+</p>
