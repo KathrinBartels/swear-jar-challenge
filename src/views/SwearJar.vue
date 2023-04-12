@@ -1,7 +1,7 @@
 <template>
   <main>
     <section>
-      <h3>Swear Jar</h3>
+      <h1>Swear Jar</h1>
       <p>This is a piggy bank for words. Every time you swear, you have to put money in it.</p>
       <p>
         You can add new items to the list, update the amount of money you have to pay for each item
@@ -9,7 +9,7 @@
       </p>
     </section>
     <section>
-      <h2>Add new item</h2>
+      <h3>Add new item</h3>
       <form @submit.prevent="addItem">
         <input type="text" v-model="itemName" placeholder="Enter name" />
         <input type="number" v-model="itemAmount" />
