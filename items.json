@@ -1,44 +1,14 @@
 {
   "items": [
     {
-      "name": "Test",
-      "amount": 50000,
+      "name": "test1",
+      "amount": 11,
+      "id": 1
+    },
+    {
+      "name": "test2",
+      "amount": 12,
       "id": 2
-    },
-    {
-      "name": "Test2",
-      "amount": 20000,
-      "id": 3
-    },
-    {
-      "name": "Test3",
-      "amount": 300,
-      "id": 4
-    },
-    {
-      "name": "Test4",
-      "amount": 400,
-      "id": 5
-    },
-    {
-      "name": "Test5",
-      "amount": 500,
-      "id": 6
-    },
-    {
-      "name": "Test6",
-      "amount": 600,
-      "id": 7
-    },
-    {
-      "name": "Test7",
-      "amount": 700,
-      "id": 8
-    },
-    {
-      "name": "Test8",
-      "amount": 820,
-      "id": 9
     }
   ]
 }

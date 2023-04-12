@@ -171,8 +171,8 @@ export default {
     },
 
     async addItem() {
-      // if this.item already exists in items, add amount to existing item
-      const itemExists = this.items.find((item: any) => item.name === this.itemName)
+      // if this.item already exists in items, add amount to existing item, ignore case of letters
+      const itemExists = this.items.find((item: any) => item.name.toLowerCase() === this.itemName.toLowerCase())
 
       if (itemExists) {
         const updatedItem = {
