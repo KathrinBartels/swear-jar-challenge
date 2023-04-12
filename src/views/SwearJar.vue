@@ -2,12 +2,10 @@
   <main>
     <section>
       <h1>Swear Jar</h1>
+      <p>This is a piggy bank for words. Every time you swear, you have to put money in it.</p>
       <p>
-        This is a piggy bank for words. Every time you swear, you have to put money in it.
-      </p>
-      <p>
-        You can add new items to the list, update the amount of money you have to pay for each item and delete items from the
-        list.
+        You can add new items to the list, update the amount of money you have to pay for each item
+        and delete items from the list.
       </p>
     </section>
     <section>
@@ -182,7 +180,9 @@ export default {
 
     async addItem() {
       // if this.item already exists in items, add amount to existing item, ignore case of letters
-      const itemExists = this.items.find((item: any) => item.name.toLowerCase() === this.itemName.toLowerCase())
+      const itemExists = this.items.find(
+        (item: any) => item.name.toLowerCase() === this.itemName.toLowerCase()
+      )
 
       if (itemExists) {
         const updatedItem = {

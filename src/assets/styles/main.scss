@@ -2,8 +2,9 @@
 
 #app {
   max-width: 100%;
-  margin: 0 auto;
   min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
   background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -14,11 +15,11 @@
 }
 
 section {
-  padding: 1rem;
-  margin: 1rem;
-  border-radius: 0.25rem;
-  background-color: var(--white);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: 0.25rem;
 }
 
 h1,
@@ -45,14 +46,14 @@ main {
 }
 
 form * {
-  margin: 5px;
   width: 95%;
+  margin: 5px;
 }
 
 @media screen and (min-width: 600px) {
   form * {
-    margin: 5px;
     width: 50%;
+    margin: 5px;
   }
 }
 
