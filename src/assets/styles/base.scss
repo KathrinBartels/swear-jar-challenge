@@ -42,6 +42,7 @@ body {
   transition: color 0.5s, background-color 0.5s;
   background: var(--primary-light);
   background-image: url(../images/pig-grabbing-money.svg);
+  background-repeat: no-repeat;
   background-size: 100%;
   font: 16px/1.6 'Karla', 'Helvetica Neue', sans-serif;
   color: var(--text-color);
