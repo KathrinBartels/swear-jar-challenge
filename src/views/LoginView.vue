@@ -8,7 +8,7 @@
       <form @submit.prevent="login">
         <input type="text" v-model="username" placeholder="Name" required />
         <input type="text" v-model="password" placeholder="Password" required />
-        <button :disabled="btnDisabled" class="btn primary" type="submit">Login</button>
+        <button :disabled="btnDisabled" class="btn secondary" type="submit">Login</button>
       </form>
     </section>
     <section>

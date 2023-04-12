@@ -78,6 +78,14 @@ input {
       border-color: var(--secondary);
     }
   }
+  &.secondary {
+    background-color: var(--secondary-light);
+    color: var(--white);
+    &:hover {
+      background-color: var(--secondary);
+      border-color: var(--secondary);
+    }
+  }
 
   &.delete {
     background-color: var(--error-light);

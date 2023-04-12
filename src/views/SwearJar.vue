@@ -13,7 +13,7 @@
       <form @submit.prevent="addItem">
         <input type="text" v-model="itemName" placeholder="Enter name" />
         <input type="number" v-model="itemAmount" />
-        <button :disabled="btnDisabled" type="submit" class="btn primary">Save</button>
+        <button :disabled="btnDisabled" type="submit" class="btn secondary">Add</button>
       </form>
     </section>
     <section>
