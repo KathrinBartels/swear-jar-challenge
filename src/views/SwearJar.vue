@@ -144,13 +144,27 @@ export default {
         return
       }
 
+      // update item
+      const newItem = {
+        name: item.name,
+        amount: item.amount
+      }
+
       try {
-        await axios.put(`http://localhost:3000/items/${id}`, item.name, item.amount)
+        await axios.put(`http://localhost:3000/items/${id}`, newItem)
         notify({
           type: 'success',
           title: 'Success',
           text: 'Item has been updated!'
         })
+      } catch (error) {
+        console.log(error)
+      }
+
+      // fetch items
+      try {
+        const res = await axios.get(`http://localhost:3000/items`)
+        this.items = res.data
       } catch (error) {
         console.log(error)
       }

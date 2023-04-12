@@ -2,12 +2,12 @@
   "items": [
     {
       "name": "Test",
-      "amount": 1120,
+      "amount": 50000,
       "id": 2
     },
     {
       "name": "Test2",
-      "amount": 200,
+      "amount": 20000,
       "id": 3
     },
     {
