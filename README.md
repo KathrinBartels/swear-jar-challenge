@@ -33,5 +33,5 @@ http://127.0.0.1:5173/
 admin/admin
 
 <p align="center">
-  Stack: Vue.js 3, Vite, Pinia, TypeScript, Sass, Axios, @kyvg/vue3-notification
+  Stack: Vue.js 3, Vite, Pinia, TypeScript, Sass, Prettier, Axios, @kyvg/vue3-notification
 </p>

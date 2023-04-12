@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
-    "db:serve": "json-server items.json",
+    "serve": "json-server data.json --watch",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },

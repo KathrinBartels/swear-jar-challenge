@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "name": "John",
+      "amount": 20,
+      "id": 1
+    },
+    {
+      "name": "Harry",
+      "amount": 10,
+      "id": 2
+    },
+    {
+      "name": "Luke",
+      "amount": 200,
+      "id": 3
+    }
+  ]
+}
