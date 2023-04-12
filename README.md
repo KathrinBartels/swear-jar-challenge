@@ -1,8 +1,8 @@
 # Swear Jar
 
-## A Vue 3 project for saving entries in a file and show the results and manipulate them
+## A Vue 3 project for saving entries in a file and show the results and update them as admin
 
-## PUs the following commands to run the project
+## Use the following commands to run the project
 
 ```sh
 npm install
@@ -22,3 +22,7 @@ npm run dev
 ### Open App in Browser
 
 http://127.0.0.1:5173/
+
+### Login data
+
+admin/admin
