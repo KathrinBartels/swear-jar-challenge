@@ -2,7 +2,7 @@
   <main>
     <section>
       <h1>Admin Login</h1>
-      <p>Enter your name and password.</p>
+      <p>Enter your name and password (admin / admin)</p>
     </section>
     <section>
       <form @submit.prevent="login">
@@ -50,19 +50,22 @@ export default {
       }
     },
     login() {
+      if (this.username !== 'admin' || this.password !== 'admin') {
+        notify({
+          type: 'error',
+          title: 'Error!',
+          text: 'Wrong username or password!'
+        })
+        return
+      }
+
       // save user data in local storage and store and set user
       localStorage.setItem('username', this.username)
+
       userStore.login(this.username, this.password)
       this.username = ''
       this.password = ''
       this.user = userStore.user
-
-      // show notification and redirect to home after notification is closed
-      notify({
-        type: 'success',
-        title: 'Welcome!',
-        text: 'You are now logged in!'
-      })
 
       // redirect to home
       location.href = '/'

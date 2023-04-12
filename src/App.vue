@@ -1,6 +1,6 @@
 <template>
   <div class="top-nav">
-    <span v-if="!user">
+    <span v-if="user !== 'admin'">
       <RouterLink to="/login" class="login">Login</RouterLink>
     </span>
     <span v-else>
@@ -8,15 +8,15 @@
     </span>
   </div>
   <header>
-    <notifications />
+    <notifications position="bottom center" />
     <img alt="Logo" class="logo" src="@/assets/images/logo.svg" width="80" height="90" />
   </header>
   <RouterView />
 </template>
 
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
 import { useUserStore } from '@/stores/userStore'
+import { RouterLink, RouterView } from 'vue-router'
 const userStore = useUserStore()
 
 let user = userStore.user

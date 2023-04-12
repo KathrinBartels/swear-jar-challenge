@@ -60,7 +60,7 @@
       </div>
     </section>
     <section v-if="user !== 'admin'">
-      Please <router-link to="/login">log in </router-link> as admin to manipulate the data.
+      Please <router-link to="/login">log in </router-link> as admin to modify the data.
     </section>
   </main>
 </template>
@@ -76,14 +76,14 @@ export default {
     return {
       items: [{ id: Number, name: '', amount: 0 }] as any,
       itemName: '',
-      itemAmount: 0,
-      user: useUserStore().user,
+      itemAmount: 10,
+      user: useUserStore().user || localStorage.getItem('user'),
       btnDisabled: true,
       currentSort: 'name',
       currentSortDir: 'asc'
     }
   },
-  // fetch items from json file
+  // fetch items
   async created() {
     try {
       const res = await axios.get(`http://localhost:3000/items`)
@@ -93,7 +93,6 @@ export default {
     }
   },
   watch: {
-    // watch for changes in itemName and itemAmount
     itemName() {
       this.checkInput()
     },
@@ -102,7 +101,7 @@ export default {
     }
   },
   methods: {
-    // check and disable/enable button
+    // check fields and disable/enable button
     checkInput() {
       if (this.itemName.length > 0 && this.itemAmount > 0) {
         this.btnDisabled = false
@@ -111,42 +110,31 @@ export default {
       }
     },
 
-    // sort table items according to key
+    // set key and direction for sorting
     sortTable(key: string) {
       this.currentSort = key
       this.currentSortDir = this.currentSortDir === 'asc' ? 'desc' : 'asc'
       this.sortItems()
     },
 
-    // sort items according to currentSort and currentSortDir
+    // sort items according to key and direction
     sortItems() {
-      let items = this.items
-      if (this.currentSort === 'name') {
-        items = items.sort((a: any, b: any) => {
-          let modifier = 1
-          if (this.currentSortDir === 'desc') modifier = -1
-          if (a.name < b.name) return -1 * modifier
-          if (a.name > b.name) return 1 * modifier
-          return 0
-        })
-      } else if (this.currentSort === 'amount') {
-        items = items.sort((a: any, b: any) => {
-          let modifier = 1
-          if (this.currentSortDir === 'desc') modifier = -1
-          if (a.amount < b.amount) return -1 * modifier
-          if (a.amount > b.amount) return 1 * modifier
-          return 0
-        })
-      }
-      return items
+      const dirModifier = this.currentSortDir === 'asc' ? 1 : -1
+      this.items.sort((a: any, b: any) => {
+        if (a[this.currentSort] < b[this.currentSort]) {
+          return -1 * dirModifier
+        }
+        if (a[this.currentSort] > b[this.currentSort]) {
+          return 1 * dirModifier
+        }
+        return 0
+      })
     },
 
-    // update item in json file
     async updateItem(id: number) {
-      // find item in items array
+      // find item by id in json file
       const item = this.items.find((item: any) => item.id === id)
 
-      // if any of the values are empty or invalid, show error and return
       if (item.name === '' || item.amount === null || item.amount === 0) {
         notify({
           type: 'error',
@@ -156,22 +144,8 @@ export default {
         return
       }
 
-      // if values are the same as before, show error and return
-      if (
-        item.name === this.items.find((item: any) => item.id === id).name &&
-        item.amount === this.items.find((item: any) => item.id === id).amount
-      ) {
-        notify({
-          type: 'error',
-          title: 'Error',
-          text: 'Please change at least one value!'
-        })
-        return
-      }
-
-      // if values are not empty, valid and different, update json file
       try {
-        await axios.put(`http://localhost:3000/items/${id}`, item)
+        await axios.put(`http://localhost:3000/items/${id}`, item.name, item.amount)
         notify({
           type: 'success',
           title: 'Success',
@@ -181,25 +155,50 @@ export default {
         console.log(error)
       }
     },
-    // add item to json file
+
     async addItem() {
+      // if this.item already exists in items, add amount to existing item
+      const itemExists = this.items.find((item: any) => item.name === this.itemName)
+
+      if (itemExists) {
+        const updatedItem = {
+          name: itemExists.name,
+          amount: (itemExists.amount += this.itemAmount)
+        }
+        try {
+          await axios.put(`http://localhost:3000/items/${itemExists.id}`, updatedItem)
+          notify({
+            type: 'success',
+            title: 'Success',
+            text: 'Item has been updated!'
+          })
+        } catch (error) {
+          console.log(error)
+        }
+      } else {
+        // else create new item
+        try {
+          await axios.post(`http://localhost:3000/items`, {
+            name: this.itemName,
+            amount: this.itemAmount
+          })
+          notify({
+            type: 'success',
+            title: 'Success',
+            text: 'Item has been added!'
+          })
+        } catch (error) {
+          console.log(error)
+        }
+      }
+
+      // reset fields
+      this.itemName = ''
+      this.itemAmount = 10
+      this.btnDisabled = true
+
+      // fetch items
       try {
-        await axios.post(`http://localhost:3000/items`, {
-          name: this.itemName,
-          amount: this.itemAmount
-        })
-        this.itemName = ''
-        this.itemAmount = 10
-        this.btnDisabled = true
-
-        // show notification
-        notify({
-          type: 'success',
-          title: 'Coink!',
-          text: 'Item has been added!'
-        })
-
-        // reload items
         const res = await axios.get(`http://localhost:3000/items`)
         this.items = res.data
       } catch (error) {
@@ -207,7 +206,6 @@ export default {
       }
     },
 
-    // delete item from json file
     async deleteItem(id: number) {
       try {
         await axios.delete(`http://localhost:3000/items/${id}`)
