@@ -1,7 +1,7 @@
 <template>
   <main>
     <section>
-      <h1>Swear Jar</h1>
+      <h3>Swear Jar</h3>
       <p>This is a piggy bank for words. Every time you swear, you have to put money in it.</p>
       <p>
         You can add new items to the list, update the amount of money you have to pay for each item
