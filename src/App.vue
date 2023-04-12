@@ -44,7 +44,7 @@ const logout = () => {
   }
 }
 header {
-  margin: 2rem 0 0;
+  margin: 1rem 0 0;
   text-align: center;
   nav {
     a {
